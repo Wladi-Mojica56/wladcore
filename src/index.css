@@ -1,0 +1,57 @@
+/* ========== VARIABLES CSS GLOBALES ========== */
+:root {
+
+    /* Fonts */
+    --font-primary: "IBM Plex Sans", sans-serif;
+    --font-secondary: "Space Grotesk", sans-serif;
+
+    /* Brand Colors */
+    --color-primary: #824fe7;
+    --color-primary-light: #824fe7;
+    --color-primary-medium: #6a34e2;
+    --color-primary-dark: #531ade;
+    --color-primary-darker: #3c00da;
+    
+    /* Neutral Colors */
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-gray-dark: #374151;
+    --color-gray-medium: #6b7280;
+    --color-gray-light: #d1d5db;
+    
+    /* Semantic Colors */
+    --color-background: #ffffff;
+    --color-text: #374151;
+    --color-text-light: #6b7280;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.15);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* ========== RESET Y ESTILOS BASE ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+

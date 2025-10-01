@@ -1,0 +1,332 @@
+/* ========== PORTFOLIO SECTION ========== */
+
+.portfolio {
+    position: relative;
+    width: 100%;
+    background-color: var(--color-black);
+    padding: 8rem 0;
+    overflow: hidden;
+}
+
+.portfolioContainer {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+}
+
+/* ========== HEADER ========== */
+
+.portfolioHeader {
+    text-align: center;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.label {
+    display: inline-flex;
+    padding: 0.5rem 1rem;
+    background-color: rgba(130, 79, 231, 0.1);
+    border: 1px solid rgba(130, 79, 231, 0.2);
+    border-radius: 50px;
+    font-size: 0.813rem;
+    color: var(--color-primary);
+    font-family: var(--font-secondary);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-white);
+    letter-spacing: -0.02em;
+    font-family: var(--font-primary);
+    max-width: 700px;
+}
+
+.gradient {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 600px;
+    font-family: var(--font-secondary);
+}
+
+/* ========== GRID ========== */
+
+.portfolioGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
+
+/* ========== PROJECT CARDS ========== */
+
+.projectCard {
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+.projectCard:hover {
+    transform: translateY(-8px);
+    border-color: rgba(130, 79, 231, 0.3);
+    box-shadow: 0 20px 40px rgba(130, 79, 231, 0.15);
+}
+
+/* ========== PROJECT IMAGE ========== */
+
+.projectImage {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.imagePlaceholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(130, 79, 231, 0.2), rgba(106, 52, 226, 0.15));
+    position: relative;
+    overflow: hidden;
+}
+
+/* Pattern variations for each project */
+.project1 {
+    background: linear-gradient(135deg, rgba(130, 79, 231, 0.25), rgba(106, 52, 226, 0.15)),
+                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.03) 10px, rgba(255, 255, 255, 0.03) 20px);
+}
+
+.project2 {
+    background: linear-gradient(135deg, rgba(106, 52, 226, 0.25), rgba(83, 26, 222, 0.15)),
+                radial-gradient(circle at 20% 50%, rgba(130, 79, 231, 0.1) 0%, transparent 50%);
+}
+
+.project3 {
+    background: linear-gradient(135deg, rgba(83, 26, 222, 0.25), rgba(60, 0, 218, 0.15)),
+                repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(255, 255, 255, 0.03) 20px, rgba(255, 255, 255, 0.03) 40px);
+}
+
+.project4 {
+    background: linear-gradient(135deg, rgba(130, 79, 231, 0.2), rgba(106, 52, 226, 0.2)),
+                radial-gradient(circle at 80% 50%, rgba(130, 79, 231, 0.15) 0%, transparent 50%);
+}
+
+.project5 {
+    background: linear-gradient(135deg, rgba(106, 52, 226, 0.2), rgba(83, 26, 222, 0.2)),
+                repeating-linear-gradient(-45deg, transparent, transparent 15px, rgba(255, 255, 255, 0.02) 15px, rgba(255, 255, 255, 0.02) 30px);
+}
+
+.project6 {
+    background: linear-gradient(135deg, rgba(83, 26, 222, 0.2), rgba(60, 0, 218, 0.2)),
+                radial-gradient(circle at 50% 50%, rgba(130, 79, 231, 0.12) 0%, transparent 70%);
+}
+
+.imageOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.projectCard:hover .imageOverlay {
+    opacity: 1;
+}
+
+.viewButton {
+    padding: 0.75rem 2rem;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border: none;
+    border-radius: 8px;
+    font-size: 0.938rem;
+    font-weight: 500;
+    font-family: var(--font-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    transform: translateY(10px);
+    opacity: 0;
+}
+
+.projectCard:hover .viewButton {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.1s;
+}
+
+.viewButton:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transform: scale(1.05);
+}
+
+/* ========== PROJECT CONTENT ========== */
+
+.projectContent {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.projectCategory {
+    font-size: 0.813rem;
+    color: var(--color-primary);
+    font-family: var(--font-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.projectTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    font-family: var(--font-primary);
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+}
+
+.projectDescription {
+    font-size: 0.938rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: var(--font-secondary);
+}
+
+/* ========== TAGS ========== */
+
+.projectTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.tag {
+    padding: 0.375rem 0.75rem;
+    background-color: rgba(130, 79, 231, 0.1);
+    border: 1px solid rgba(130, 79, 231, 0.2);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: var(--font-secondary);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.projectCard:hover .tag {
+    background-color: rgba(130, 79, 231, 0.15);
+    border-color: rgba(130, 79, 231, 0.3);
+}
+
+/* ========== ANIMATIONS ========== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 1024px) {
+    .portfolio {
+        padding: 6rem 0;
+    }
+
+    .portfolioGrid {
+        gap: 2rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .portfolioHeader {
+        margin-bottom: 4rem;
+    }
+
+    .projectImage {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio {
+        padding: 4rem 0;
+    }
+
+    .portfolioContainer {
+        padding: 0 1.5rem;
+    }
+
+    .portfolioGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .portfolioHeader {
+        margin-bottom: 3rem;
+    }
+
+    .projectImage {
+        height: 220px;
+    }
+
+    .projectContent {
+        padding: 1.5rem;
+    }
+
+    .projectTitle {
+        font-size: 1.25rem;
+    }
+
+    .projectDescription {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projectContent {
+        padding: 1.25rem;
+    }
+
+    .projectImage {
+        height: 200px;
+    }
+}
+

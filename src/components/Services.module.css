@@ -1,0 +1,313 @@
+/* ========== SERVICES SECTION ========== */
+
+.services {
+    position: relative;
+    width: 100%;
+    background-color: var(--color-black);
+    padding: 8rem 0;
+    overflow: hidden;
+}
+
+.servicesContainer {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+}
+
+/* ========== HEADER ========== */
+
+.servicesHeader {
+    text-align: center;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.label {
+    display: inline-flex;
+    padding: 0.5rem 1rem;
+    background-color: rgba(130, 79, 231, 0.1);
+    border: 1px solid rgba(130, 79, 231, 0.2);
+    border-radius: 50px;
+    font-size: 0.813rem;
+    color: var(--color-primary);
+    font-family: var(--font-secondary);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-white);
+    letter-spacing: -0.02em;
+    font-family: var(--font-primary);
+    max-width: 700px;
+}
+
+.gradient {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 600px;
+    font-family: var(--font-secondary);
+}
+
+/* ========== GRID ========== */
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* ========== CARDS ========== */
+
+.serviceCard {
+    position: relative;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+.serviceCard:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(130, 79, 231, 0.3);
+    transform: translateY(-4px);
+}
+
+.cardHover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(130, 79, 231, 0.08) 0%,
+        transparent 50%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.serviceCard:hover .cardHover {
+    opacity: 1;
+}
+
+/* ========== VISUAL ELEMENT ========== */
+
+.cardVisual {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visualShape {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(130, 79, 231, 0.15) 0%, 
+        rgba(106, 52, 226, 0.1) 100%);
+    border-radius: 16px;
+    transform: rotate(45deg);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.serviceCard:hover .visualShape {
+    transform: rotate(45deg) scale(1.1);
+    background: linear-gradient(135deg, 
+        rgba(130, 79, 231, 0.25) 0%, 
+        rgba(106, 52, 226, 0.15) 100%);
+}
+
+.visualNumber {
+    position: relative;
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: var(--font-primary);
+    background: linear-gradient(135deg, 
+        var(--color-primary) 0%, 
+        var(--color-primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    z-index: 1;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.serviceCard:hover .visualNumber {
+    opacity: 1;
+}
+
+/* Variaciones de forma por posición */
+.serviceCard:nth-child(2) .visualShape {
+    border-radius: 50%;
+}
+
+.serviceCard:nth-child(3) .visualShape {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.serviceCard:nth-child(4) .visualShape {
+    border-radius: 16px;
+    transform: rotate(0deg);
+}
+
+.serviceCard:nth-child(4):hover .visualShape {
+    transform: rotate(0deg) scale(1.1);
+}
+
+.serviceCard:nth-child(5) .visualShape {
+    border-radius: 50% 50% 0 0;
+}
+
+.serviceCard:nth-child(6) .visualShape {
+    border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 1rem;
+    font-family: var(--font-primary);
+    letter-spacing: -0.01em;
+}
+
+.cardDescription {
+    font-size: 0.938rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: var(--font-secondary);
+}
+
+/* ========== ANIMATIONS ========== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 1024px) {
+    .services {
+        padding: 6rem 0;
+    }
+
+    .servicesGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .servicesHeader {
+        margin-bottom: 4rem;
+    }
+
+    .cardVisual {
+        width: 80px;
+        height: 80px;
+    }
+
+    .visualNumber {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services {
+        padding: 4rem 0;
+    }
+
+    .servicesContainer {
+        padding: 0 1.5rem;
+    }
+
+    .servicesGrid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .servicesHeader {
+        margin-bottom: 3rem;
+    }
+
+    .serviceCard {
+        padding: 2rem;
+    }
+
+    .cardVisual {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 1.5rem;
+    }
+
+    .visualNumber {
+        font-size: 2rem;
+    }
+
+    .cardTitle {
+        font-size: 1.125rem;
+    }
+
+    .cardDescription {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .serviceCard {
+        padding: 1.5rem;
+    }
+
+    .cardVisual {
+        width: 60px;
+        height: 60px;
+    }
+
+    .visualNumber {
+        font-size: 1.75rem;
+    }
+}
