@@ -1,4 +1,5 @@
 import styles from './Hero.module.css'
+import ilustracion from '../assets/ilustracion.png'
 
 const Hero = () => {
     return (
@@ -33,8 +34,8 @@ const Hero = () => {
 
                     <div className={styles.heroStats}>
                         <div className={styles.stat}>
-                            <div className={styles.statNumber}>50+</div>
-                            <div className={styles.statLabel}>Proyectos</div>
+                            <div className={styles.statNumber}>48h</div>
+                            <div className={styles.statLabel}>Tiempo de Respuesta</div>
                         </div>
                         <div className={styles.stat}>
                             <div className={styles.statNumber}>100%</div>
@@ -51,7 +52,11 @@ const Hero = () => {
                     <div className={styles.visualCard}>
                         <div className={styles.cardGlow}></div>
                         <div className={styles.cardContent}>
-                            <div className={styles.gridPattern}></div>
+                            <img 
+                                src={ilustracion} 
+                                alt="Desarrollo web profesional - WladCore"
+                                className={styles.heroImage}
+                            />
                         </div>
                     </div>
                 </div>
@@ -66,4 +71,3 @@ const Hero = () => {
 }
 
 export default Hero
-

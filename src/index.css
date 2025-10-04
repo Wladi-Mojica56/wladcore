@@ -5,24 +5,31 @@
     --font-primary: "IBM Plex Sans", sans-serif;
     --font-secondary: "Space Grotesk", sans-serif;
 
-    /* Brand Colors */
-    --color-primary: #824fe7;
-    --color-primary-light: #824fe7;
-    --color-primary-medium: #6a34e2;
-    --color-primary-dark: #531ade;
-    --color-primary-darker: #3c00da;
+    /* WladCore Brand Colors - Paleta Oficial */
+    --color-deep-violet: #5A189A;
+    --color-electric-purple: #7B2CBF;
+    --color-lavender-mist: #E0BBE4;
+    --color-charcoal-grey: #333333;
+    --color-pure-white: #FFFFFF;
+    
+    /* Brand Color Variations */
+    --color-primary: #390697; /* Electric Purple como principal */
+    --color-primary-light: #670372; /* Lavender Mist */
+    --color-primary-medium: #7B2CBF; /* Electric Purple */
+    --color-primary-dark: #5A189A; /* Deep Violet */
+    --color-primary-darker: #4A148C; /* Variación más oscura */
     
     /* Neutral Colors */
     --color-black: #000000;
-    --color-white: #ffffff;
-    --color-gray-dark: #374151;
-    --color-gray-medium: #6b7280;
-    --color-gray-light: #d1d5db;
+    --color-white: #FFFFFF;
+    --color-gray-dark: #333333; /* Charcoal Grey */
+    --color-gray-medium: #666666;
+    --color-gray-light: #E0BBE4; /* Lavender Mist */
     
     /* Semantic Colors */
-    --color-background: #ffffff;
-    --color-text: #374151;
-    --color-text-light: #6b7280;
+    --color-background: #FFFFFF;
+    --color-text: #333333; /* Charcoal Grey */
+    --color-text-light: #666666;
     
     /* Spacing */
     --spacing-xs: 0.25rem;
@@ -46,6 +53,53 @@
     --transition-fast: 0.2s ease;
     --transition-base: 0.3s ease;
     --transition-slow: 0.5s ease;
+    
+    /* Common Color Variations */
+    --color-white-98: rgba(255, 255, 255, 0.98);
+    --color-white-85: rgba(255, 255, 255, 0.85);
+    --color-white-70: rgba(255, 255, 255, 0.7);
+    --color-white-65: rgba(255, 255, 255, 0.65);
+    --color-white-60: rgba(255, 255, 255, 0.6);
+    --color-white-50: rgba(255, 255, 255, 0.5);
+    --color-white-40: rgba(255, 255, 255, 0.4);
+    --color-white-30: rgba(255, 255, 255, 0.3);
+    --color-white-20: rgba(255, 255, 255, 0.2);
+    --color-white-15: rgba(255, 255, 255, 0.15);
+    --color-white-10: rgba(255, 255, 255, 0.1);
+    --color-white-08: rgba(255, 255, 255, 0.08);
+    --color-white-05: rgba(255, 255, 255, 0.05);
+    --color-white-04: rgba(255, 255, 255, 0.04);
+    --color-white-03: rgba(255, 255, 255, 0.03);
+    --color-white-02: rgba(255, 255, 255, 0.02);
+    
+    /* Primary Color Variations */
+    --color-primary-25: rgba(123, 44, 191, 0.25);
+    --color-primary-20: rgba(123, 44, 191, 0.2);
+    --color-primary-15: rgba(123, 44, 191, 0.15);
+    --color-primary-12: rgba(123, 44, 191, 0.12);
+    --color-primary-10: rgba(123, 44, 191, 0.1);
+    --color-primary-08: rgba(123, 44, 191, 0.08);
+    --color-primary-30: rgba(123, 44, 191, 0.3);
+    
+    /* Primary Dark Variations */
+    --color-primary-dark-25: rgba(90, 24, 154, 0.25);
+    --color-primary-dark-20: rgba(90, 24, 154, 0.2);
+    --color-primary-dark-15: rgba(90, 24, 154, 0.15);
+    --color-primary-dark-12: rgba(90, 24, 154, 0.12);
+    --color-primary-dark-10: rgba(90, 24, 154, 0.1);
+    
+    /* Primary Darker Variations */
+    --color-primary-darker-25: rgba(76, 0, 140, 0.25);
+    --color-primary-darker-20: rgba(76, 0, 140, 0.2);
+    --color-primary-darker-15: rgba(76, 0, 140, 0.15);
+    --color-primary-darker-12: rgba(76, 0, 140, 0.12);
+    --color-primary-darker-10: rgba(76, 0, 140, 0.1);
+    
+    /* Shadow Colors */
+    --shadow-black-05: rgba(0, 0, 0, 0.05);
+    --shadow-black-10: rgba(0, 0, 0, 0.1);
+    --shadow-black-15: rgba(0, 0, 0, 0.15);
+    --shadow-black-80: rgba(0, 0, 0, 0.8);
 }
 
 /* ========== RESET Y ESTILOS BASE ========== */

@@ -1,12 +1,13 @@
 import styles from './Navbar.module.css'
-import logo from '../assets/Logo_WladCore.PNG'
+import logo from '../assets/Logo WladCore.svg'
 
 const Navbar = () => {
     return (
         <nav className={styles.navbar}>
         <div className={styles.navbarContainer}>
             <div className={styles.navbarLogo}>
-                <img src={logo} alt="Startup" />
+                <img src={logo} alt="WladCode" />
+                <span className={styles.navbarLogoText}>WladCode</span>
             </div>
             
             <ul className={styles.navbarMenu}>
