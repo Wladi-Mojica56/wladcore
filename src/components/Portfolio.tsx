@@ -19,23 +19,27 @@ const Portfolio = () => {
 
                 <div className={styles.portfolioGrid}>
                     {projectsData.map((project, index) => (
-                        <div 
+                        <article 
                             key={index} 
                             className={styles.projectCard}
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
                             <div className={styles.projectImage}>
-                                <div className={`${styles.imagePlaceholder} ${styles[project.image]}`}>
-                                    <div className={styles.imageOverlay}>
-                                        <a 
-                                            href={project.link} 
-                                            target="_blank" 
-                                            rel="noopener noreferrer"
-                                            className={styles.viewButton}
-                                        >
-                                            Ver Proyecto
-                                        </a>
-                                    </div>
+                                <img 
+                                    src={project.image} 
+                                    alt={`${project.title} - ${project.description}`}
+                                    className={styles.projectImage}
+                                />
+                                <div className={styles.imageOverlay}>
+                                    <a 
+                                        href={project.link} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className={styles.viewButton}
+                                        aria-label={`Ver proyecto ${project.title}`}
+                                    >
+                                        Ver Proyecto
+                                    </a>
                                 </div>
                             </div>
                             
@@ -50,7 +54,7 @@ const Portfolio = () => {
                                     ))}
                                 </div>
                             </div>
-                        </div>
+                        </article>
                     ))}
                 </div>
             </div>

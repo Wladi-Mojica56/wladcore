@@ -1,9 +1,9 @@
 import styles from './Hero.module.css'
-import ilustracion from '../assets/ilustracion.png'
+import ilustracion from '../assets/BuhoSVG.svg'
 
 const Hero = () => {
     return (
-        <section className={styles.hero}>
+        <section id="hero" className={styles.hero}>
             <div className={styles.heroContainer}>
                 <div className={styles.heroContent}>
                     <div className={styles.badge}>
@@ -12,8 +12,7 @@ const Hero = () => {
                     </div>
                     
                     <h1 className={styles.heroTitle}>
-                        Transformamos ideas en
-                        <span className={styles.gradient}> experiencias digitales</span>
+                        <span className={styles.gradient}> Transformamos ideas en experiencias digitales</span>
                     </h1>
                     
                     <p className={styles.heroSubtitle}>

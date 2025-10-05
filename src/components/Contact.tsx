@@ -77,6 +77,12 @@ const Contact = () => {
             title: 'Ubicación',
             value: 'Colombia',
         },
+        {
+            number: '04',
+            title: 'Whatsapp',
+            value: 'Contactame',
+            link: 'https://wa.me/3248213762',
+        },
     ]
 
     return (

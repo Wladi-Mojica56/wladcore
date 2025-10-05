@@ -1,5 +1,6 @@
 import styles from './Footer.module.css'
-import logo from '../assets/Logo_WladCore.PNG'
+import logo from '../assets/Logotipo WladCore.svg'
+
 
 const Footer = () => {
     const currentYear = new Date().getFullYear()

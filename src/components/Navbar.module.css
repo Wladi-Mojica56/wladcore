@@ -14,12 +14,11 @@
 .navbarContainer {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 1.25rem 2.5rem;
+    padding: 1rem 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-height: 80px; /* Fija la altura máxima del navbar */
-    overflow: hidden; /* Evita que el contenido se desborde */
+    min-height: 70px; /* Cambiado de max-height a min-height */
 }
 
 /* ========== LOGO ========== */
@@ -27,16 +26,17 @@
 .navbarLogo {
     display: flex;
     align-items: center;
-    gap: 0.75rem; /* Espacio entre el logo y el texto */
+    gap: 0.75rem;
+    flex-shrink: 0; /* Evita que el logo se comprima */
 }
 
 .navbarLogo img {
-    height: 75px; /* Ahora puedes usar cualquier altura */
+    height: 50px; /* Reducido de 75px a 50px */
     width: auto;
     display: block;
     cursor: pointer;
     transition: opacity 0.2s ease;
-    object-fit: contain; /* Mantiene las proporciones */
+    object-fit: contain;
 }
 
 .navbarLogo img:hover {
@@ -44,7 +44,7 @@
 }
 
 .navbarLogoText {
-    font-size: 2.5rem;
+    font-size: 1.75rem; /* Reducido de 2.5rem */
     font-weight: 700;
     font-family: var(--font-primary);
     background: linear-gradient(135deg, var(--color-primary-darker), var(--color-primary));
@@ -77,22 +77,28 @@
 .navbarMenu {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 2rem; /* Reducido de 2.5rem */
     margin: 0;
     padding: 0;
     align-items: center;
+    flex-shrink: 0; /* Evita que el menú se comprima */
+}
+
+.navbarMenu li {
+    flex-shrink: 0; /* Cada item mantiene su tamaño */
 }
 
 .navbarMenu li a {
     color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
     font-weight: 400;
-    font-size: 0.938rem;
+    font-size: 0.938rem; /* Reducido de 1rem */
     font-family: var(--font-secondary);
     letter-spacing: -0.01em;
     transition: color 0.2s ease;
     position: relative;
     display: inline-block;
+    white-space: nowrap; /* Evita que el texto se rompa */
 }
 
 .navbarMenu li a::after {
@@ -114,46 +120,111 @@
     width: 100%;
 }
 
-/* ========== CTA BUTTON ========== */
+/* ========== WHATSAPP BUTTON ========== */
 
 .navbarCta {
-    background-color: transparent;
-    color: var(--color-white);
-    border: 1.5px solid rgba(255, 255, 255, 0.2);
-    padding: 0.625rem 1.5rem;
-    border-radius: 6px;
-    font-weight: 500;
+    background: linear-gradient(135deg, #25D366, #20BA5A);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.75rem;
+    border-radius: 12px;
+    font-weight: 600;
     font-size: 0.875rem;
     font-family: var(--font-secondary);
     letter-spacing: -0.01em;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     white-space: nowrap;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.navbarCta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
 }
 
 .navbarCta:hover {
-    background-color: var(--color-white);
-    color: var(--color-black);
-    border-color: var(--color-white);
+    background: linear-gradient(135deg, #20BA5A, #1DA851);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.navbarCta:hover::before {
+    left: 100%;
 }
 
 .navbarCta:active {
-    transform: scale(0.98);
+    transform: translateY(-1px) scale(0.98);
+}
+
+.navbarCta::after {
+    content: '💬';
+    font-size: 1rem;
+    margin-right: 0.25rem;
 }
 
 /* ========== RESPONSIVE ========== */
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .navbarContainer {
         padding: 1rem 2rem;
     }
 
     .navbarMenu {
-        gap: 2rem;
+        gap: 1.5rem;
     }
 
     .navbarMenu li a {
         font-size: 0.875rem;
+    }
+
+    .navbarLogoText {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbarContainer {
+        padding: 1rem 1.5rem;
+    }
+
+    .navbarMenu {
+        gap: 1.25rem;
+    }
+
+    .navbarMenu li a {
+        font-size: 0.813rem;
+    }
+
+    .navbarLogo img {
+        height: 42px;
+    }
+
+    .navbarLogoText {
+        font-size: 1.375rem;
+    }
+}
+
+@media (max-width: 900px) {
+    /* Ocultar solo el texto del logo para dar más espacio */
+    .navbarLogoText {
+        display: none;
+    }
+
+    .navbarMenu {
+        gap: 1rem;
     }
 }
 
@@ -163,26 +234,26 @@
     }
 
     .navbarMenu {
-        display: none;
+        display: none; /* Aquí necesitarás un menú hamburguesa */
     }
 
     .navbarLogo img {
-        height: 36px;
+        height: 40px;
     }
 
     .navbarLogoText {
-        font-size: 1.75rem;
+        display: block;
+        font-size: 1.5rem;
     }
 
     .navbarCta {
-        padding: 0.5rem 1.25rem;
+        padding: 0.625rem 1.5rem;
         font-size: 0.813rem;
+        border-radius: 10px;
     }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .navbarMenu {
-        gap: 1.5rem;
+    
+    .navbarCta::after {
+        font-size: 0.9rem;
     }
 }
 
